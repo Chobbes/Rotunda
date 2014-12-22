@@ -11,6 +11,13 @@ A variety of different scheduling algorithms may be implemented within Rotunda i
 * Tasks with deadlines should be scheduled more frequently as their deadlines approach.
 * Breaks should be scheduled in between periods of work.
 
+Some potential issues that can occur with scheduling:
+
+* A task is swapped out frequently, making it difficult to build up any inertia on the task.
+  - A note taking discipline may be helpful for this.
+  - Smaller sub-tasks can eliminate this problem.
+* If similar, or unwanted tasks are grouped together this can hamper productivity.
+
 Work and Breaks
 ---------------
 
@@ -71,3 +78,7 @@ Print current thing to work on.
 ### calendar
 
 Print a full calendar to see an overview of tasks.
+
+### Others
+
+* Need a way to swap tasks out... Manually reorder them in the scheduler, etc.
