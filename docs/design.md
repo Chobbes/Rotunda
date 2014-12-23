@@ -50,6 +50,11 @@ Tasks are events which have a due date. This due date helps with scheduling. A t
 
 Events and tasks can have other smaller tasks which must be completed before the main task. Rotunda is able to keep track of the dependencies for these sub-tasks and can schedule them accordingly. Ideally these sub-tasks can be completed within one work period.
 
+Directory Structure
+-------------------
+
+Rotunda by default uses the following directory structure. It reserves the `~/.rotunda` directory, and uses it to store information such as configuration files, and activities.
+
 Command Line Interface
 ----------------------
 
