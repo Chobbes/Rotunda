@@ -91,3 +91,8 @@ Print a full calendar to see an overview of tasks.
 ### Others
 
 * Need a way to swap tasks out... Manually reorder them in the scheduler, etc.
+
+Web Interface
+-------------
+
+A web interface for Rotunda is planned. This will be implemented after the command line interface has seen some maturity.
