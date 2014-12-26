@@ -64,6 +64,10 @@ Rotunda has a command line interface called `rta`. Most of the commands are inte
 
 Command to add a task / event to the calendar.
 
+### list
+
+List all of the current tasks / events.
+
 ### complete / archive
 
 Mark a task as completed.
