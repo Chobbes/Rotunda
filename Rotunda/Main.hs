@@ -65,14 +65,14 @@ getEditor = do env <- getEnvironment
 
 -- | Make a template for a task.
 makeTemplate :: UTCTime -> String
-makeTemplate time = intercalate "\n" [ "---"
-                                     , "title: "
-                                     , "date: " ++ show time
-                                     , "due: "
-                                     , "tags: "
-                                     , "---"
-                                     , ""
-                                     ]
+makeTemplate time = unlines [ "---"
+                            , "title: "
+                            , "date: " ++ show time
+                            , "due: "
+                            , "tags: "
+                            , "---"
+                            , ""
+                            ]
 
 
 getRotundaDir :: IO FilePath
