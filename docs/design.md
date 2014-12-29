@@ -31,7 +31,10 @@ Rotunda must be able to keep track of all tasks. Thus it must contain built in c
 Git Integration
 ---------------
 
-All of the tasks are kept track of within a git repository in plain text. This makes it easy to modify them, share your Rotunda calendar, and undo any changes.
+All of the tasks are kept track of within a git repository in plain text. This makes it easy to modify them, share your Rotunda calendar, and undo any changes (which could be particularly useful for accidental calendar imports).
+
+  - It is desirable to let Rotunda have access to multiple git repos for coordinating calendars.
+  - Don't necessarily want everybody to have access to your entire calendar, but they could have their own shared repo.
 
 Types of Activities
 -------------------
@@ -50,10 +53,25 @@ Tasks are events which have a due date. This due date helps with scheduling. A t
 
 Events and tasks can have other smaller tasks which must be completed before the main task. Rotunda is able to keep track of the dependencies for these sub-tasks and can schedule them accordingly. Ideally these sub-tasks can be completed within one work period.
 
+### Desired Features
+
+It should be possible to record recurring events. These could happen on particular days of the week, and may be given various predetermined time slots. It should also be possible to schedule daily tasks which can be performed within certain time periods (or throughout the entire day), for instance one might wish to schedule "reading" for 30 minutes a day.
+
 Directory Structure
 -------------------
 
-Rotunda by default uses the following directory structure. It reserves the `~/.rotunda` directory, and uses it to store information such as configuration files, and activities.
+Rotunda by default uses the following directory structure. It reserves the `~/.rotunda` directory, and uses it to store information such as configuration files, and activities. Each task, or event entered into Rotunda will be placed in this directory with a name matching the current date and time in ISO 8601 format.
+
+Markup
+------
+
+In the future a custom markup language may be developed to ease the process, however Rotunda's current philosophy is to not force any particular markup language. Instead Rotunda relies upon [Pandoc](http://johnmacfarlane.net/pandoc/) to parse metadata from various formats such as [org](http://johnmacfarlane.net/pandoc/), and [markdown](http://daringfireball.net/projects/markdown/). This will allow Rotunda to handle many different formats by default.
+
+Certain file formats may not allow for arbitrary metadata. Rotunda must therefore supply an alternative method for supplying metadata to these files. One possibility is having a second file which is a key-value store of the metadata corresponding to the file.
+
+### Templates
+
+User defined templates for tasks / events. If no template can be found no file is created, and the text editor is opened to a blank buffer. Different templates can be used for different formats.
 
 Command Line Interface
 ----------------------
@@ -87,6 +105,14 @@ Print current thing to work on.
 ### calendar
 
 Print a full calendar to see an overview of tasks.
+
+### export
+
+Export calendars and more.
+
+### import
+
+Import calendars.
 
 ### Others
 
