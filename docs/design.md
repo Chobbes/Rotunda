@@ -18,6 +18,12 @@ Some potential issues that can occur with scheduling:
   - Smaller sub-tasks can eliminate this problem.
 * If similar, or unwanted tasks are grouped together this can hamper productivity.
 
+### Default Scheduling Algorithm
+
+It should be possible to replace the scheduling algorithm with something else if desired, but Rotunda should supply a good default option. This scheduler is designed to take advantage of as many desirable qualities as possible.
+
+Firstly the scheduler must be able to deal with tasks and events which are restricted to certain time slots. These are assigned first.
+
 Work and Breaks
 ---------------
 
