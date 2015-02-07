@@ -1,5 +1,5 @@
 { pkgs ? (import <nixpkgs> {})
-, haskellPackages ? pkgs.haskellPackages_ghc783
+, haskellPackages ? pkgs.haskellPackages_ghc
 }:
 
 haskellPackages.cabal.mkDerivation (self: {
