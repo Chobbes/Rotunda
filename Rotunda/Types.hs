@@ -80,3 +80,4 @@ data WeekDay = Monday
              | Friday
              | Saturday
              | Sunday
+

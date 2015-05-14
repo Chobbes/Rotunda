@@ -92,4 +92,4 @@ getCurrentDir = do activity <- getActivityDir
 
 getArchiveDir :: IO FilePath
 getArchiveDir = do activity <- getActivityDir
-                   return (joinPath [activity, "archive"]) 
+                   return (joinPath [activity, "archive"])
