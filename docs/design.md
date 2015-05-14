@@ -18,11 +18,36 @@ Some potential issues that can occur with scheduling:
   - Smaller sub-tasks can eliminate this problem.
 * If similar, or unwanted tasks are grouped together this can hamper productivity.
 
+If a task is finished early, then there are a couple of options for the scheduler.
+
+1. All future tasks may be re-evaluated, and a new completely different schedule is made
+2. Nothing about the other tasks changes, the now empty time slots are filled with tasks from the current pool
+3. All future instances of the planned task are changed to break periods
+
+The third option may be problematic, particularly if tasks are scheduled far in advance. The first and second options are preferable.
+
+1. This option gives the algorithm much more flexibility, and can allow for better time usage.
+2. This option keeps the calendar of tasks much more stable, which makes them easier to keep track of.
+
+This may be best left to user preference, and some compromise between these three options may be prefered.
+
 ### Default Scheduling Algorithm
 
 It should be possible to replace the scheduling algorithm with something else if desired, but Rotunda should supply a good default option. This scheduler is designed to take advantage of as many desirable qualities as possible.
 
 Firstly the scheduler must be able to deal with tasks and events which are restricted to certain time slots. These are assigned first.
+
+### Possible disciplines
+
+* FIFO
+  - Will only have one task until the end of time, until it's finished and we move onto the next one.
+* EDF
+  - Simple. Should work well if deadlines are spread out, but otherwise it may cause issues.
+* SRT
+  - Need to estimate remaining time.
+* RR
+  - Unstable :(.
+
 
 Work and Breaks
 ---------------
@@ -33,6 +58,10 @@ Calendar
 --------
 
 Rotunda must be able to keep track of all tasks. Thus it must contain built in calendar software.
+
+* Custom calendar / agenda displays
+* ical import / export
+* Google calendar integration
 
 Git Integration
 ---------------
@@ -55,9 +84,11 @@ Events are normal activities in your calendar. These generally require no additi
 
 Tasks are events which have a due date. This due date helps with scheduling. A task will be scheduled more frequently as deadlines approach.
 
-### Sub-Tasks
+### Task Dependency Graphs / Sub-Tasks
 
 Events and tasks can have other smaller tasks which must be completed before the main task. Rotunda is able to keep track of the dependencies for these sub-tasks and can schedule them accordingly. Ideally these sub-tasks can be completed within one work period.
+
+Tasks will actually be represented with a digraph. Certain tasks may depend upon other tasks. An error should be displayed if there are circular dependencies between tasks.
 
 ### Desired Features
 
